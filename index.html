@@ -1,0 +1,704 @@
+<title>Andy大恆哥的每日財經摘要 — 2026.07.26</title>
+<style>
+  :root{
+    --bg:#eef1f0;
+    --surface:#ffffff;
+    --ink:#1b2430;
+    --ink-soft:#56606f;
+    --ink-faint:#8b95a1;
+    --accent:#a8791f;
+    --accent-soft:#f4e9d3;
+    --rule:#d8dcd7;
+    --up:#1f7a4d;
+    --up-bg:#e3f1e9;
+    --down:#b3352c;
+    --down-bg:#f8e7e5;
+    --src-udn:#2a3a63;
+    --src-udn-bg:#e6e9f1;
+    --src-yahoo:#6b3fa0;
+    --src-yahoo-bg:#efe6f7;
+    --src-futu:#0f8f6c;
+    --src-futu-bg:#e1f3ec;
+    --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
+    --overlay: rgba(15,19,26,0.5);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#10141b; --surface:#171d27; --ink:#e7e9ec; --ink-soft:#9aa5b1; --ink-faint:#6b7684;
+      --accent:#dcae52; --accent-soft:#3a2f16; --rule:#2a3341; --up:#42b382; --up-bg:#132b21;
+      --down:#e2695c; --down-bg:#331714;
+      --src-udn:#8fa2d6; --src-udn-bg:#212a42; --src-yahoo:#c39bec; --src-yahoo-bg:#2c2140;
+      --src-futu:#5fd6ab; --src-futu-bg:#123328;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
+      --overlay: rgba(0,0,0,0.65);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#10141b; --surface:#171d27; --ink:#e7e9ec; --ink-soft:#9aa5b1; --ink-faint:#6b7684;
+    --accent:#dcae52; --accent-soft:#3a2f16; --rule:#2a3341; --up:#42b382; --up-bg:#132b21;
+    --down:#e2695c; --down-bg:#331714;
+    --src-udn:#8fa2d6; --src-udn-bg:#212a42; --src-yahoo:#c39bec; --src-yahoo-bg:#2c2140;
+    --src-futu:#5fd6ab; --src-futu-bg:#123328;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
+    --overlay: rgba(0,0,0,0.65);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f0; --surface:#ffffff; --ink:#1b2430; --ink-soft:#56606f; --ink-faint:#8b95a1;
+    --accent:#a8791f; --accent-soft:#f4e9d3; --rule:#d8dcd7; --up:#1f7a4d; --up-bg:#e3f1e9;
+    --down:#b3352c; --down-bg:#f8e7e5;
+    --src-udn:#2a3a63; --src-udn-bg:#e6e9f1; --src-yahoo:#6b3fa0; --src-yahoo-bg:#efe6f7;
+    --src-futu:#0f8f6c; --src-futu-bg:#e1f3ec;
+    --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
+    --overlay: rgba(15,19,26,0.5);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  body.modal-open{overflow:hidden;}
+  .serif{font-family:"Iowan Old Style","Noto Serif TC","Songti TC","Source Han Serif TC",Georgia,"Times New Roman",serif;}
+  .mono{font-family:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{max-width:960px;margin:0 auto;padding:2.6rem 1.5rem 1.4rem;}
+  .masthead-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem 1rem;}
+  .kicker{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+  .masthead h1{font-size:clamp(1.8rem,4.5vw,2.5rem);margin:0.25rem 0 0.35rem;font-weight:600;text-wrap:balance;letter-spacing:-0.01em;}
+  .masthead .date{font-size:0.85rem;color:var(--ink-soft);}
+  .masthead-rule{height:1px;background:linear-gradient(to right, var(--ink), transparent 85%);opacity:0.5;margin-top:1.1rem;}
+  .sources-line{margin-top:0.9rem;font-size:0.78rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:0.4rem 0.6rem;align-items:center;}
+
+  /* ---------- Tabs ---------- */
+  .subnav{position:sticky;top:0;z-index:10;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);}
+  .subnav-inner{max-width:960px;margin:0 auto;padding:0 1.5rem;display:flex;gap:0.4rem;}
+  .tab-btn{appearance:none;background:none;border:none;cursor:pointer;font:inherit;text-decoration:none;font-size:0.85rem;font-weight:600;color:var(--ink-soft);padding:0.85rem 0.9rem 0.7rem;border-bottom:2px solid transparent;transition:color 0.15s ease, border-color 0.15s ease;}
+  .tab-btn.active{color:var(--ink);border-bottom-color:var(--accent);}
+  .tab-btn .count{font-family:ui-monospace,"SF Mono",monospace;color:var(--ink-faint);font-size:0.75rem;margin-left:0.3rem;}
+
+  /* ---------- Sections ---------- */
+  main{max-width:960px;margin:0 auto;padding:2.2rem 1.5rem 3rem;}
+  .panel{display:none;}
+  .panel.active{display:block;}
+  section.cat{padding-top:0.2rem;}
+  .cat-head{display:flex;align-items:baseline;gap:0.7rem;margin-bottom:1.1rem;}
+  .cat-head h2{font-size:1.5rem;font-weight:600;margin:0;letter-spacing:-0.01em;}
+  .cat-head .cat-note{font-size:0.8rem;color:var(--ink-faint);}
+  .cat-head-rule{flex:1;height:1px;background:var(--rule);margin-left:0.4rem;}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0.9rem;}
+  .card{
+    background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+    padding:1.15rem 1.2rem 1.1rem;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:0.6rem;color:inherit;cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .card-meta{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;}
+  .src-pill{font-size:0.68rem;font-weight:700;letter-spacing:0.03em;padding:0.22rem 0.55rem;border-radius:999px;white-space:nowrap;}
+  .src-udn{color:var(--src-udn);background:var(--src-udn-bg);}
+  .src-yahoo{color:var(--src-yahoo);background:var(--src-yahoo-bg);}
+  .src-futu{color:var(--src-futu);background:var(--src-futu-bg);}
+  .card-time{font-size:0.72rem;color:var(--ink-faint);}
+  .card h3{font-size:1.03rem;line-height:1.42;margin:0;font-weight:600;text-wrap:balance;}
+  .card p{margin:0;font-size:0.85rem;color:var(--ink-soft);line-height:1.7;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+  .tag{font-size:0.68rem;padding:0.16rem 0.5rem;border:1px solid var(--rule);border-radius:6px;color:var(--ink-soft);background:transparent;}
+  .card-link{margin-top:auto;padding-top:0.2rem;font-size:0.76rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:0.25rem;}
+  .card-link .arrow{transition:transform 0.15s ease;}
+  .card:hover .card-link .arrow{transform:translateX(3px);}
+
+  /* ---------- Overview panel ---------- */
+  .overview-lede{font-size:0.92rem;color:var(--ink-soft);max-width:62ch;margin:0 0 1.8rem;}
+  .digest-list{list-style:none;margin:0 0 2.4rem;padding:0;border-top:1px solid var(--rule);}
+  .digest-list li{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--rule);font-size:0.87rem;}
+  .digest-list .tag-label{color:var(--accent);font-weight:700;font-size:0.76rem;letter-spacing:0.02em;padding-top:0.1rem;}
+  .digest-list p{margin:0;color:var(--ink-soft);line-height:1.7;}
+  .digest-list p b{color:var(--ink);font-weight:600;}
+
+  .analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.4rem;}
+  @media (max-width:640px){.analysis-grid{grid-template-columns:1fr;}}
+  .analysis-card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:1.2rem 1.3rem;box-shadow:var(--shadow);}
+  .analysis-card h4{margin:0 0 0.8rem;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:0.5rem;}
+  .dot{width:0.5rem;height:0.5rem;border-radius:50%;display:inline-block;}
+  .dot.risk{background:var(--down);}
+  .dot.support{background:var(--up);}
+  .analysis-card ol{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:0.6rem;}
+  .analysis-card li{font-size:0.85rem;color:var(--ink-soft);line-height:1.65;}
+  .analysis-card li b{color:var(--ink);font-weight:600;}
+
+  .advice-box{background:var(--accent-soft);border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);border-radius:10px;padding:1.3rem 1.4rem;margin-bottom:1.2rem;}
+  .advice-box h4{margin:0 0 0.9rem;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent);}
+  .advice-box dl{margin:0;display:flex;flex-direction:column;gap:0.75rem;}
+  .advice-box dt{font-weight:700;font-size:0.85rem;color:var(--ink);}
+  .advice-box dd{margin:0.15rem 0 0;font-size:0.85rem;color:var(--ink-soft);line-height:1.7;}
+
+  .disclaimer{font-size:0.76rem;color:var(--ink-faint);line-height:1.7;border-left:2px solid var(--rule);padding-left:0.9rem;}
+
+  footer{max-width:960px;margin:0 auto;padding:1.6rem 1.5rem 3rem;font-size:0.76rem;color:var(--ink-faint);border-top:1px solid var(--rule);}
+
+  /* ---------- Modal preview ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:var(--overlay);
+    display:flex;align-items:flex-start;justify-content:center;
+    padding:6vh 1.2rem;z-index:100;opacity:0;pointer-events:none;
+    transition:opacity 0.18s ease;
+  }
+  .modal-overlay.open{opacity:1;pointer-events:auto;}
+  .modal{
+    position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:14px;
+    max-width:640px;width:100%;max-height:86vh;overflow-y:auto;
+    box-shadow:0 24px 64px -20px rgba(0,0,0,0.45);
+    transform:translateY(10px);transition:transform 0.18s ease;
+  }
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-close{
+    position:absolute;top:1rem;right:1rem;width:2rem;height:2rem;border-radius:50%;
+    border:1px solid var(--rule);background:var(--surface);color:var(--ink-soft);
+    font-size:1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background 0.15s ease,color 0.15s ease;
+  }
+  .modal-close:hover{background:var(--accent-soft);color:var(--ink);}
+  .modal-head{padding:1.4rem 3.2rem 1.1rem 1.5rem;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:0.7rem;}
+  .modal-head h3{margin:0;font-size:1.28rem;line-height:1.4;text-wrap:balance;}
+  .modal-body{padding:1.2rem 1.5rem 0.4rem;display:flex;flex-direction:column;gap:0.95rem;}
+  .modal-body p{margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.85;}
+  .modal-foot{padding:1.2rem 1.5rem 1.5rem;display:flex;justify-content:flex-end;}
+  .btn-source{
+    display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;
+    color:var(--ink);background:var(--accent-soft);border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    padding:0.55rem 1rem;border-radius:8px;text-decoration:none;transition:transform 0.15s ease;
+  }
+  .btn-source:hover{transform:translateY(-1px);}
+
+  @media (prefers-reduced-motion: reduce){.card, .card-link .arrow, .tab-btn, .modal, .modal-overlay, .btn-source{transition:none;}}
+  @media (max-width:520px){
+    .subnav-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .tab-btn{padding:0.75rem 0.6rem 0.6rem;white-space:nowrap;}
+    .digest-list li{grid-template-columns:1fr;gap:0.2rem;}
+    .modal-overlay{padding:0;align-items:stretch;}
+    .modal{max-width:none;max-height:none;height:100%;border-radius:0;}
+  }
+</style>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <div>
+      <div class="kicker">Andy大恆哥的每日財經摘要 · Daily Market Brief</div>
+      <h1 class="serif">美股・台股・總體消息</h1>
+    </div>
+    <div class="date mono">2026&nbsp;/&nbsp;07&nbsp;/&nbsp;26（日）</div>
+  </div>
+  <div class="masthead-rule"></div>
+  <div class="sources-line">
+    資料來源
+    <span class="src-pill src-udn">經濟日報</span>
+    <span class="src-pill src-yahoo">Yahoo Finance</span>
+    <span class="src-pill src-futu">富途牛牛</span>
+    <span style="margin-left:auto;">共 27 則新聞</span>
+  </div>
+</header>
+
+<nav class="subnav" id="subnav">
+  <div class="subnav-inner" role="tablist">
+    <button class="tab-btn active" data-target="overview" role="tab">總覽</button>
+    <button class="tab-btn" data-target="us" role="tab">美股 <span class="count">9</span></button>
+    <button class="tab-btn" data-target="tw" role="tab">台股 <span class="count">10</span></button>
+    <button class="tab-btn" data-target="macro" role="tab">總體消息 <span class="count">8</span></button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ================= 總覽 ================= -->
+  <div class="panel active" id="panel-overview">
+    <div class="cat-head"><h2 class="serif">今日大事記</h2><span class="cat-note">Key Events</span><div class="cat-head-rule"></div></div>
+    <ul class="digest-list">
+      <li><span class="tag-label">台股大盤</span><p><b>台股7/24重挫1,195點（-2.66%）收43,654點、跌破季線</b>，國家隊護盤130億元仍未止跌；法人視為漲多後健康回檔而非轉空，關注下週能否收復季線。</p></li>
+      <li><span class="tag-label">台積電</span><p><b>股價回落至2,350元，公司同步上修資本支出至600–640億美元</b>並加碼千億美元赴美設廠；謝金河、周代運等專家均認為此波回檔屬布局機會。</p></li>
+      <li><span class="tag-label">美股科技股</span><p><b>科技七雄單週市值蒸發8,900億美元</b>，特斯拉、SpaceX重挫拖累馬斯克身家單週蒸發約1,300億美元；英特爾財報優於預期但股價仍重挫7.9%，反映市場對AI變現能力信心動搖。</p></li>
+      <li><span class="tag-label">聯準會</span><p><b>7/29（三）利率決策為全週焦點</b>，主流預期按兵不動，但市場已將意外升息機率定價至約3成，油價與公債殖利率走揚使決策添增變數。</p></li>
+      <li><span class="tag-label">財報周</span><p>微軟、Meta（週三）與蘋果、亞馬遜（週四）接力公布財報，<b>選擇權市場隱含波動率明顯偏高</b>，芝加哥恐慌指數已彈升至伊朗戰爭時期高位。</p></li>
+      <li><span class="tag-label">地緣政治／油價</span><p>葉門青年運動空襲沙烏地石油設施，<b>布蘭特原油兩週飆漲近27%</b>，中油宣布下週汽油調漲0.7元、柴油上看29.3元。</p></li>
+      <li><span class="tag-label">產業焦點</span><p>輝達Rubin平台帶動ABF載板需求，法人調升欣興、南電、景碩目標價；<b>SK集團、三星分別與輝達、博通簽署逾5,000億與2,000億美元AI合作案</b>。</p></li>
+      <li><span class="tag-label">政策面</span><p>美國對台關稅新制上路，<b>MFN稅率與新關稅採不疊加原則</b>，一定程度緩解先前市場對台灣出口衝擊的疑慮。</p></li>
+      <li><span class="tag-label">空頭訊號</span><p>「大賣空」麥可．貝瑞加碼放空美光、輝達與半導體ETF，<b>質疑輝達營收高度仰賴循環式融資</b>，AI泡沫論再度受到市場關注。</p></li>
+    </ul>
+
+    <div class="cat-head"><h2 class="serif">市場分析與建議</h2><span class="cat-note">Synthesis</span><div class="cat-head-rule"></div></div>
+
+    <div class="analysis-grid">
+      <div class="analysis-card">
+        <h4><span class="dot risk"></span>風險因子</h4>
+        <ol>
+          <li><b>聯準會決策不確定性：</b>市場已將意外升息機率上調至約3成，若結果偏鷹，美元與美債殖利率恐進一步走揚，壓抑成長股評價。</li>
+          <li><b>AI資本支出報酬率遭質疑：</b>Alphabet自由現金流轉負、特斯拉燒錢擴張、貝瑞公開放空輝達供應鏈，市場開始要求AI敘事提出實際獲利佐證。</li>
+          <li><b>地緣政治與油價：</b>中東情勢牽動油價逼近百美元，既推升通膨疑慮、也拉高聯準會維持高利率的正當性，形成股債雙重壓力。</li>
+        </ol>
+      </div>
+      <div class="analysis-card">
+        <h4><span class="dot support"></span>支撐因子</h4>
+        <ol>
+          <li><b>基本面仍具韌性：</b>AI伺服器訂單能見度看到2027年底、半導體產能滿載，上市櫃公司EPS成長率市場共識上看25%。</li>
+          <li><b>資本支出循環延續：</b>台積電資本支出持續上修，帶動載板、廠務工程等上游供應鏈同步受惠，訂單能見度延伸至2028年後。</li>
+          <li><b>歷史經驗參考：</b>台股／台積電急殺後接近季線或前波低點常是分批布局窗口，本次下跌量能相對收縮，較不像系統性賣壓。</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="advice-box">
+      <h4>綜合觀察重點</h4>
+      <dl>
+        <div><dt>短線</dt><dd>聯準會決策與四大科技巨頭財報公布前，波動風險偏高，追價前宜保留部分彈性資金以因應意外行情。</dd></div>
+        <div><dt>中線</dt><dd>若台股回測季線或10日線且量能收縮至前一日約8成，過往經驗屬相對甜蜜的分批進場訊號；台積電、AI伺服器供應鏈（緯穎、緯創）、載板三雄（欣興、南電、景碩）、廠務工程股（漢唐、亞翔、聖暉等）是本輪資本支出循環中能見度較高的族群。</dd></div>
+        <div><dt>觀察指標</dt><dd>財報後四大科技巨頭的資本支出指引、聯準會聲明用字是否偏鷹、布蘭特原油能否站穩100美元，三者任一超乎預期都可能牽動全週行情方向。</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ================= 美股 ================= -->
+  <div class="panel" id="panel-us">
+  <section class="cat">
+    <div class="cat-head"><h2 class="serif">美股</h2><span class="cat-note">U.S. Equities</span><div class="cat-head-rule"></div></div>
+    <div class="cards">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9651077">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 22:51</span></div>
+        <h3>「大賣空」貝瑞 加碼放空美光、輝達等晶片股</h3>
+        <p>知名放空投資人麥可．貝瑞公開最新持倉，於933.86美元加碼放空美光、210.28美元放空輝達，並放空半導體ETF（SOXX）。他引述國際清算銀行報告，質疑輝達營收高度仰賴循環式融資安排、部分需求並非來自真實終端客戶，暗示AI晶片熱潮存在泡沫風險。</p>
+        <div class="tags"><span class="tag">#美光</span><span class="tag">#輝達</span><span class="tag">#半導體ETF</span><span class="tag">#特斯拉</span><span class="tag">#AI泡沫</span></div>
+        <div class="card-detail" hidden>
+          <p>貝瑞同時維持特斯拉與Palantir的既有空頭部位，並持續放空重機具大廠卡特彼勒；卡特彼勒股價已由1060.98美元回落至894.54美元，為他帶來可觀帳面獲利，顯示這輪操作並非單一押注，而是針對他認為評價過高的AI相關供應鏈進行系統性放空。</p>
+          <p>值得留意的是，貝瑞並未全面看空市場，同時新增數位博弈類股Flutter Entertainment與DraftKings的多頭部位。市場解讀這反映他對AI資本支出循環是否能兌現獲利抱持高度懷疑，但對消費性、現金流穩定的產業仍願意進場。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9651006">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 22:06</span></div>
+        <h3>庫克力推長鑫、長存加入蘋果供應鏈 遭美光強烈反對</h3>
+        <p>蘋果執行長庫克向美國政府遊說，盼在美國以外市場銷售的產品改用中國長鑫存儲、長江存儲記憶體晶片，因應全球記憶體價格一年來飆漲至四倍的成本壓力；此舉遭美光執行長梅赫羅特拉強烈反對，認為將重創美國本土產業。</p>
+        <div class="tags"><span class="tag">#蘋果</span><span class="tag">#美光</span><span class="tag">#長江存儲</span><span class="tag">#記憶體</span></div>
+        <div class="card-detail" hidden>
+          <p>蘋果與長江存儲的接觸並非首次，兩家公司早在2022年就曾進行大規模工程測試，但當時因美國國會反對而擱置；如今記憶體價格暴漲重新讓蘋果考慮這條路徑，以緩解採購成本壓力並可能反映在消費者售價上。</p>
+          <p>美光目前毛利率已超過80%，在記憶體全面漲價下，公司傾向將新增產能優先供應給AI伺服器客戶，而非消費性電子品牌，這也是蘋果對美光定價策略不滿的主因。負責協調此議題的官員包括商務部長盧特尼克與財政部長貝森特，川普政府需在壓低消費者物價與扶植半導體自主產能兩項目標間權衡。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9650726">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 16:57</span></div>
+        <h3>高通計劃從9月起漲價 且漲幅高達兩位數</h3>
+        <p>高通宣布自9月1日起調漲晶片售價，漲幅達兩位數百分比，主因是持續吸收供應商成本壓力已到極限，尋找替代供應源的成效也有限。受影響最大的客戶包括代工夥伴台積電，以及三星、小米等手機品牌與Meta穿戴裝置部門。</p>
+        <div class="tags"><span class="tag">#高通</span><span class="tag">#台積電</span><span class="tag">#三星</span><span class="tag">#手機供應鏈</span></div>
+        <div class="card-detail" hidden>
+          <p>這波漲價反映出上游晶圓代工與記憶體供應緊張已直接轉嫁到晶片設計廠身上；華爾街普遍預期，涵蓋智慧手機、超級電腦與車用晶片的供應短缺情況將延續至明年，AI資料中心建設的爆發性需求是主要推手之一。</p>
+          <p>消息公布當日高通股價一度下跌2.4%，市場解讀投資人短線在消化漲價對出貨量的潛在衝擊，但長線而言若漲價能順利轉嫁，將有助於維持毛利率；台積電作為晶圓代工龍頭，其產能分配能力也因此再度成為市場關注焦點。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9650370">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 12:02</span></div>
+        <h3>科技七雄市值單周蒸發近兆美元 下周靠財報重振AI熱情</h3>
+        <p>美股七大科技股單週市值蒸發達8,900億美元：特斯拉重挫18%創2022年來最差週表現，Alphabet、亞馬遜、Meta同步下跌逾6%，SpaceX下跌7.2%、較6月高點回落約43%，英特爾下跌7.9%。</p>
+        <div class="tags"><span class="tag">#特斯拉</span><span class="tag">#Alphabet</span><span class="tag">#Meta</span><span class="tag">#SpaceX</span><span class="tag">#英特爾</span></div>
+        <div class="card-detail" hidden>
+          <p>這波下跌的導火線之一是Alphabet單季自由現金流首度轉負59億美元，同時將今年資本支出上修至逾2,000億美元，市場開始質疑巨額AI投資能否在合理時間內轉化為實際獲利，AI敘事出現首次系統性重估。</p>
+          <p>布蘭特原油同期突破100美元、美債殖利率升至年度高點，進一步推升股票評價壓力；下週微軟、亞馬遜、Meta、蘋果的財報與資本支出指引，將是市場檢驗AI投資是否仍具說服力的關鍵測試。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9650272">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 11:09</span></div>
+        <h3>英特爾財報財測大好 股價為什麼還崩跌？</h3>
+        <p>英特爾第2季營收161億美元、年增25%，遠優於市場預估的144億美元，調整後每股獲利42美分是市場預期的兩倍，資料中心業務成長59%，但股價當日仍重挫7.9%收92.32美元，費半指數同步跌4.3%。</p>
+        <div class="tags"><span class="tag">#英特爾</span><span class="tag">#費城半導體指數</span><span class="tag">#晶圓代工</span></div>
+        <div class="card-detail" hidden>
+          <p>Stifel分析師指出，市場最在意的晶圓代工外部客戶簽約進度仍未見具體突破，這是壓抑股價的核心原因；英特爾毛利率僅40.4%，遠低於過去60%左右的水準，加上今年資本支出約200億美元、明年可能再增，投資人擔憂獲利品質尚未跟上營收成長。</p>
+          <p>另一項隱憂是PC業務可能面臨的庫存調整風險。整體而言，這次財報顯示營收動能無虞，但市場評價已從成長性轉向代工事業能否真正落地，成為後續股價能否止穩的分水嶺。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.news.yahoo.com/%E7%BE%8E%E8%82%A1%E8%B6%85%E7%B4%9A%E8%B2%A1%E5%A0%B1%E5%91%A8%E7%99%BB%E5%A0%B4-ai%E6%B3%A1%E6%B2%AB%E7%96%91%E6%85%AE%E7%BD%A9%E9%A0%82-%E8%81%AF%E6%BA%96%E6%9C%83%E5%88%A9%E7%8E%87%E6%B1%BA%E7%AD%96%E6%88%90%E9%97%9C%E9%8D%B5%E9%A2%A8%E6%9A%B4%E7%9C%BC-150905115.html">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>美股超級財報周登場 AI泡沫疑慮罩頂</h3>
+        <p>美股上週收黑，市場氣氛轉趨謹慎；下週聯準會利率決策與微軟、Meta、蘋果、亞馬遜財報將接連登場，投資人須同時消化利率路徑與AI支出報酬率的雙重不確定性，是牽動大盤方向的關鍵一週。</p>
+        <div class="tags"><span class="tag">#聯準會</span><span class="tag">#AI泡沫</span><span class="tag">#科技財報</span></div>
+        <div class="card-detail" hidden>
+          <p>這波謹慎情緒主要來自兩條線交織：一是聯準會決策的鷹鴿方向仍不明朗，二是市場對AI資本支出能否兌現獲利的疑慮升溫，兩者若同時偏向不利方向，恐放大股市波動。</p>
+          <p>分析師普遍建議，本週操作應聚焦於財報後管理層對資本支出指引的用字，以及聯準會會後聲明是否釋出進一步緊縮訊號，兩者都可能是短線行情的轉折點。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.news.yahoo.com/%E7%89%B9%E6%96%AF%E6%8B%89%E8%B2%A1%E5%A0%B1%E6%85%98%E6%B7%A1-%E8%82%A1%E5%83%B9%E5%91%A8%E6%8C%AB18-%E9%A6%AC%E6%96%AF%E5%85%8B%E5%A4%B1%E8%A1%80%E5%8D%83%E5%84%84%E7%BE%8E%E5%85%83%E8%87%AA%E5%98%B2-%E5%89%8D%E5%85%86%E5%85%83%E5%AF%8C%E8%B1%AA-134400065.html">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>特斯拉財報慘淡 股價周跌18% 馬斯克失血千億美元自嘲「前兆元富豪」</h3>
+        <p>特斯拉第2季財報不如預期，因大舉投入Robotaxi、人形機器人及晶片廠研發導致自由現金流轉負，股價單日重挫14.5%、單週累計跌18%收313.03美元。同週SpaceX股價下跌7.2%收115.07美元，較6月高點回落約43%。</p>
+        <div class="tags"><span class="tag">#特斯拉</span><span class="tag">#SpaceX</span><span class="tag">#馬斯克</span><span class="tag">#Robotaxi</span></div>
+        <div class="card-detail" hidden>
+          <p>研究機構Argus Research指出，現金流承壓將延後特斯拉獲利成長的時間表，短期內要實現穩定獲利難度極高，這也是股價重挫的核心原因，而非單純的交車數字不如預期。</p>
+          <p>特斯拉與SpaceX雙重重挫下，馬斯克身家單週蒸發約1,300億美元，本人在社群平台上自嘲身家縮水程度足以稱作前兆元富豪，反映市場對其龐大燒錢式擴張策略的耐心正在減少。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.stock.yahoo.com/news/cpu%E9%87%8D%E8%BF%94ai%E6%88%B0%E5%A0%B8%E8%AA%B0%E5%B0%87%E5%8B%9D%E5%87%BA-%E8%8B%B1%E7%89%B9%E7%88%BE-amd-%E8%BC%9D%E9%81%94%E6%8E%80%E4%B8%89%E5%BC%B7%E7%88%AD%E9%9C%B8-121008557.html">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>CPU重返AI戰場 英特爾、AMD、輝達三強爭霸</h3>
+        <p>隨AI資料中心建設持續加溫，伺服器CPU重新成為兵家必爭之地：英特爾調漲價格因應成本壓力，AMD與輝達則同步推出新一代伺服器處理器正面交鋒，三強在雲端運算與AI基礎設施市場的競爭態勢明顯升溫。</p>
+        <div class="tags"><span class="tag">#英特爾</span><span class="tag">#AMD</span><span class="tag">#輝達</span><span class="tag">#伺服器CPU</span></div>
+        <div class="card-detail" hidden>
+          <p>過去伺服器CPU市場一度被視為成長趨緩的成熟賽道，如今隨AI伺服器需求爆發，CPU與GPU的搭配效率成為雲端業者採購決策的關鍵，帶動三大廠商重新投入研發資源。</p>
+          <p>分析師認為，這場競爭最終將牽動資料中心建置的整體成本結構，若三強維持激烈價格與規格競爭，對下游雲端服務商而言可能是降低AI基礎設施成本的利多。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://news.futunn.com/post/76583618/">
+        <div class="card-meta"><span class="src-pill src-futu">富途牛牛</span><span class="card-time mono">本週</span></div>
+        <h3>晶片巨頭集體宣布 9500億美元AI合作計畫曝光</h3>
+        <p>南韓SK集團與輝達簽署逾5,000億美元合作協議，將建置5吉瓦級AI資料中心並部署200萬顆GPU，SK海力士同步供應HBM等長期AI記憶體方案；三星電子與博通則簽署2,000億美元合作備忘錄，共同開發先進記憶體晶片與AI加速器。</p>
+        <div class="tags"><span class="tag">#輝達</span><span class="tag">#博通</span><span class="tag">#三星</span><span class="tag">#SK海力士</span><span class="tag">#HBM</span></div>
+        <div class="card-detail" hidden>
+          <p>三星與博通的合作還包含2奈米代工與先進封裝服務的供應承諾；此外SK集團另將供應輝達7,500億美元高效能半導體晶片，加總三筆協議規模達9,500億美元，是近期全球AI供應鏈中規模最大的合作案之一。</p>
+          <p>輝達同時宣布斥資10億美元投資南韓入口網站業者Naver的AI資料中心建設。這一系列協議顯示，AI算力競賽正從單純採購晶片，演變為晶片商、記憶體廠與雲端業者之間更深度的資本綁定關係。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+    </div>
+  </section>
+  </div>
+
+  <!-- ================= 台股 ================= -->
+  <div class="panel" id="panel-tw">
+  <section class="cat">
+    <div class="cat-head"><h2 class="serif">台股</h2><span class="cat-note">Taiwan Equities</span><div class="cat-head-rule"></div></div>
+    <div class="cards">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5607/9651207">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/26 00:23</span></div>
+        <h3>0726 未來一周大代誌</h3>
+        <p>彙整下週台股須留意的財經行事曆，包含上市櫃公司法說會密集召開、除權息案件，以及聯準會利率決策、美股科技巨頭財報等牽動台股走勢的國際事件時程，投資人可預先掌握重要時間節點。</p>
+        <div class="tags"><span class="tag">#台股行事曆</span><span class="tag">#法說會</span></div>
+        <div class="card-detail" hidden>
+          <p>本週法說會預期涵蓋多家電子權值股，市場將密切觀察管理層對下半年展望與資本支出計畫的說法，作為評估基本面是否支撐股價的重要依據。</p>
+          <p>除了公司面消息，投資人也應同步留意聯準會決策公布時間（台灣時間週四凌晨）與美股四大科技巨頭財報時程，避免在重大消息公布前後過度曝險。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5607/9648741">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/24 14:39</span></div>
+        <h3>台股收盤／大跌1195點收43654點 台積電跌2.28%</h3>
+        <p>台股7月24日開高走低，終場大跌1,195.97點、跌幅2.66%，收43,654.84點，成交量7,924億元，全市場上漲349家、下跌739家。電子零組件類股跌幅最重達5.8%，半導體類股跌2.83%。</p>
+        <div class="tags"><span class="tag">#台積電</span><span class="tag">#南亞科</span><span class="tag">#日月光</span><span class="tag">#台達電</span><span class="tag">#聯發科</span></div>
+        <div class="card-detail" hidden>
+          <p>權值股全面走弱，台積電收2,350元跌2.28%，南亞科重挫5.86%、日月光跌5.54%、台達電跌5.05%、聯發科跌3.22%、鴻海跌1.94%；當日盤中最高來到44,769.39點，最低則探至43,607.4點，振幅逾千點。</p>
+          <p>這波賣壓被市場歸因於美伊戰事升溫、通膨隱憂與AI變現疑慮三重因素交織，屬於情緒面主導的急殺，而非單一利空事件所致。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5607/9649684">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 00:34</span></div>
+        <h3>台股跌千點 法人喊一線「升」機</h3>
+        <p>台股因美伊戰火、通膨隱憂及AI變現疑慮重挫1,195點、跌破季線，國家隊護盤買超130.1億元仍未能止跌。富邦投顧董事長陳奕光認為季線失守屬於假跌破機率較高。</p>
+        <div class="tags"><span class="tag">#台積電</span><span class="tag">#緯穎</span><span class="tag">#研華</span><span class="tag">#國家隊</span></div>
+        <div class="card-detail" hidden>
+          <p>法人提出的關鍵支撐位包括季線、7月20日低點41,967點與5月20日盤中低點39,967點；若下週一能站回季線，指數可望挑戰月線45,171點，反彈區間預估落在43,000點至45,500點之間反覆測試。</p>
+          <p>族群表現分歧明顯：AI伺服器供應鏈（緯穎、緯創）與工業電腦（研華、樺漢）相對抗跌，光通訊與砷化鎵族群屬於跌深反彈候選，矽晶圓與被動元件則持續弱勢，顯示資金並非全面撤出電子股，而是轉向能見度較高的次族群。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5607/9650547">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 13:58</span></div>
+        <h3>ABF載板結構性供需失衡將擴大 法人調升三雄目標價</h3>
+        <p>法人指出高階ABF載板面臨結構性供需失衡，主因輝達Rubin平台載板面積需求較Blackwell提升71%，加上HBM整合與CPO光收發模組推升載板尺寸；供給端則受限於上游T-glass玻纖布短缺，需待2027年上半年才紓解。</p>
+        <div class="tags"><span class="tag">#欣興</span><span class="tag">#南電</span><span class="tag">#景碩</span><span class="tag">#臻鼎</span><span class="tag">#HBM</span></div>
+        <div class="card-detail" hidden>
+          <p>全球主要供應商在2025至2028年的資本支出規劃達191億美元，較前一波2020至2023年擴產潮大增51%，反映廠商對這波結構性需求的高度信心；不過因原料瓶頸，短期供給彈性依然有限。</p>
+          <p>法人預估今年供過於求幅度將收斂至1%至2%以內，2027、2028年則轉為供不應求，缺口分別達22%與29%，同時BT載板產能也可能轉向ABF生產以承接漲價趨勢，欣興、南電、景碩三大廠目標價同步獲得上調。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5607/9650405">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 12:20</span></div>
+        <h3>台積電上修資本支出 法人看好6檔廠務工程股仍具上檔空間</h3>
+        <p>台積電宣布上修2026年資本支出至600至640億美元，並加碼1,000億美元於美國新建四座廠房，台灣本地則規劃13座先進製程及封裝廠，2026至2028年資本支出估將突破2,000億美元。</p>
+        <div class="tags"><span class="tag">#台積電</span><span class="tag">#漢唐</span><span class="tag">#亞翔</span><span class="tag">#聖暉</span><span class="tag">#帆宣</span></div>
+        <div class="card-detail" hidden>
+          <p>法人看好受惠的六檔廠務工程股包括漢唐、亞翔、洋基工程、聖暉、帆宣與兆聯實業，這些公司承接台積電及周邊供應鏈的無塵室、廠務系統工程，訂單能見度看至2028年以後。</p>
+          <p>除了台積電本身擴產，封測廠日月光、京元電子、力成也同步進入擴產周期，加上記憶體廠與成熟製程廠房需求同步增加，法人認為廠務工程股的訂單動能具有較高韌性，評價仍有上修空間。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123397/9650923">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 23:42</span></div>
+        <h3>台股擂台／周冠軍「股市獲利王」何文高 本周看好緯穎、漢翔</h3>
+        <p>本週台股擂台賽唯一單週正報酬的參賽者何文高，以1.9%報酬率奪冠，持股台虹受惠輝達無玻布題材與訂單效應單週大漲24.6%，惟保勝光學同期下跌11.2%小幅拖累績效。</p>
+        <div class="tags"><span class="tag">#緯穎</span><span class="tag">#漢翔</span><span class="tag">#台虹</span></div>
+        <div class="card-detail" hidden>
+          <p>台虹的強勢表現反映市場對先進載板材料（無玻纖布）供應鏈的高度關注，這與同期ABF載板供需吃緊的產業趨勢相呼應，顯示相關材料廠同步受惠這波資本支出循環。</p>
+          <p>何文高本週轉進緯穎與漢翔，分別聚焦AI伺服器代工與航太軍工兩大主題，選股邏輯延續對訂單能見度與題材動能的偏好，而非單純追逐指數強弱。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://www.setn.com/news/1878443">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>3大利空夾擊！台股下週恐有5千點波動</h3>
+        <p>台股下週面臨三大利空交織：中東情勢牽動油價逼近百美元，市場憂心美方對伊朗立場升溫及紅海、荷莫茲海峽航運風險；聯準會利率決策前，市場對是否意外升息看法分歧，約3成押注升息；加上Meta、微軟週三，蘋果、亞馬遜週四接力公布財報。</p>
+        <div class="tags"><span class="tag">#聯準會</span><span class="tag">#財報周</span><span class="tag">#地緣政治</span></div>
+        <div class="card-detail" hidden>
+          <p>報導特別澄清，所謂5,000點波動並非單一交易日的崩跌，而是指整週在反覆劇烈震盪下的累積振幅，投資人不宜過度解讀為單日重挫的預警。</p>
+          <p>三項利空中，聯準會決策與科技巨頭財報屬於已知時程的事件風險，可提前控管部位；地緣政治風險則屬於難以預測的黑天鵝變數，建議投資人保留較高的資金彈性因應。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://www.chinatimes.com/realtimenews/20260725002487-260410">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>夜盤又殺445點！下周爆5000點狂震警報</h3>
+        <p>台指期夜盤持續走弱、單日再殺445點，市場示警下週恐延續劇烈震盪；技術面觀察若下週五未能收復季線，指數恐進一步下探半年線約39,000點。</p>
+        <div class="tags"><span class="tag">#台指期</span><span class="tag">#季線</span><span class="tag">#半年線</span></div>
+        <div class="card-detail" hidden>
+          <p>夜盤走勢通常反映國際盤（尤其是美股）的即時變化，這波下殺與同一時間美股科技股重挫、地緣政治風險升溫的背景一致，顯示台股短線仍高度連動於國際市場情緒。</p>
+          <p>技術分析師提醒，季線與半年線是接下來兩個月最重要的多空分水嶺，投資人可將這兩條均線作為觀察台股中期趨勢是否轉弱的簡易指標。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E8%B7%8C%E5%8D%83%E9%BB%9E%E8%83%BD%E6%8E%A5%E5%88%80-%E5%B0%88%E5%AE%B6%E5%96%8A-53000%E6%B2%92%E5%95%8F%E9%A1%8C-%E6%8A%84%E5%BA%95%E8%B2%B7%E9%BB%9E%E5%9C%A8%E9%80%99%E5%A4%A9-083900414.html">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>台股跌千點能接刀？ 專家喊「53000沒問題」：抄底買點在這天</h3>
+        <p>前國際大通投顧研究部副總周代運認為，此波下跌屬於漲多後的健康回檔，量能收縮並非重殺出貨；看好AI伺服器訂單已排到2027年底、半導體產能全滿，上市櫃今年EPS成長率市場共識上看25%，目標劍指53,000點。</p>
+        <div class="tags"><span class="tag">#台積電</span><span class="tag">#AI伺服器</span><span class="tag">#外資</span></div>
+        <div class="card-detail" hidden>
+          <p>他從三個面向支持看法：基本面上AI伺服器訂單能見度長、半導體產能滿載；技術面上波浪測幅與型態滿足點均指向53,000點是基本波段目標；籌碼面上外資僅屬短線獲利了結、並非全面反手放空，本土壽險與投信資金持續進場承接。</p>
+          <p>操作建議上，他認為不必急於當下進場，較理想的抄底訊號是指數回測10日線附近、成交量縮至前一日約8成左右，屆時風險報酬比更佳，可避免現在進場承擔額外的短線波動風險。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.news.yahoo.com/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%9B%9E%E6%AA%942350%E5%85%83%E8%A9%B2%E6%92%BF%E5%97%8E-%E8%AC%9D%E9%87%91%E6%B2%B3%E6%9B%9D-%E5%8F%B2%E4%B8%8A6%E5%A4%A7%E6%8A%84%E5%BA%95%E6%99%82%E5%88%BB-%E9%80%99%E6%AC%A1%E6%A9%9F%E6%9C%83%E5%8F%88%E4%BE%86%E4%BA%86-104508548.html">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>台積電回檔2350元該撿嗎？謝金河曝「史上6大抄底時刻」</h3>
+        <p>財經專家謝金河指出，台積電上週五股價一度低探2,290元，本波回檔至2,350元同樣是布局機會；他強調台積電營運透明、獲利可預估、前景明朗，是這波修正中值得留意的標的。</p>
+        <div class="tags"><span class="tag">#台積電</span><span class="tag">#謝金河</span></div>
+        <div class="card-detail" hidden>
+          <p>他回顧近20年台積電歷史上的幾次重大抄底時刻，包括2008年金融海嘯、2015年記憶體產業崩跌、2016年市場修正，以及2020年新冠疫情初期，這些時期股價急殺後都出現顯著反彈，成為長期投資人重要的加碼窗口。</p>
+          <p>謝金河認為，這次回檔的成因（資本支出上修、短線獲利了結）與過去純粹恐慌性拋售不同，基本面並未惡化，因此他將此次修正定位為結構性成長股中相對常見的健康拉回，而非趨勢轉空的訊號。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+    </div>
+  </section>
+  </div>
+
+  <!-- ================= 總體消息 ================= -->
+  <div class="panel" id="panel-macro">
+  <section class="cat">
+    <div class="cat-head"><h2 class="serif">總體消息</h2><span class="cat-note">Macro &amp; Global</span><div class="cat-head-rule"></div></div>
+    <div class="cards">
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/122381/9651163">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 23:29</span></div>
+        <h3>Fed下周會升息嗎？結果可能是「鷹式按兵不動」</h3>
+        <p>聯準會將於7月29日（週三）結束為期兩天的會議，主流預期按兵不動，但受伊朗戰事推升油價、公債殖利率勁揚影響，市場對意外升息的押注機率明顯提高。</p>
+        <div class="tags"><span class="tag">#聯準會</span><span class="tag">#FOMC</span><span class="tag">#華許</span></div>
+        <div class="card-detail" hidden>
+          <p>文章將可能結果定性為鷹式按兵不動的組合——利率維持不變，但聲明用字偏向鷹派，為後續可能的緊縮動作預留空間；這種組合過去也曾在通膨數據反覆的階段出現。</p>
+          <p>新任主席華許刻意避免提供明確的前瞻指引，市場解讀這是為了保留政策彈性，但也讓投資人難以精準定價後續利率路徑，短線增添不確定性。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5599/9650777">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25</span></div>
+        <h3>美國公債殖利率變化 顯示市場預期Fed動向</h3>
+        <p>英國金融時報分析指出，美債殖利率走升主因是市場預期聯準會升息，而非單純反映油價上漲。核心PCE平減指數已從去年10月2.8%升至今年5月3.4%，失業率則降至4.2%、名目工資年增仍逾3%。</p>
+        <div class="tags"><span class="tag">#美債殖利率</span><span class="tag">#核心PCE</span><span class="tag">#聯準會</span></div>
+        <div class="card-detail" hidden>
+          <p>文章特別點出一項關鍵訊號：即便5至6月國際油價一度下跌，短天期公債殖利率與2年期實質殖利率仍持續走高，這顯示驅動殖利率上升的主因是貨幣政策預期，而非投資人對通膨的短期焦慮。</p>
+          <p>若聯準會屆時真的維持利率不變，通膨預期恐進一步升溫，並可能損及新任主席華許在市場眼中的政策公信力，這也是本次會議格外受到關注的原因之一。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5616/9650889">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25 22:49</span></div>
+        <h3>聯準會有望維持高利率 美元指數穩步走強格局</h3>
+        <p>美元指數上週回升至101，10年期美債殖利率突破4.7%創年內新高，油價同步彈升至90美元附近。滙豐銀行分析聯準會可能比多數央行更長時間維持高利率，貨幣政策分化將支撐美元穩步走強。</p>
+        <div class="tags"><span class="tag">#美元指數</span><span class="tag">#美債殖利率</span><span class="tag">#油價</span></div>
+        <div class="card-detail" hidden>
+          <p>國泰世華銀行提醒，油價走揚會同時對債市與股市構成雙重壓力：一方面推升通膨預期、拉高公債殖利率，另一方面也使聯準會降息的時間點更難確立，形成股債匯三個市場同步承壓的局面。</p>
+          <p>在主要貨幣普遍走弱之際，澳幣與紐幣被視為十國集團中少數短期內可望逆勢跑贏美元的貨幣，主要與其央行政策路徑相對獨立有關。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/5599/9650678">
+        <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/25</span></div>
+        <h3>美國對台關稅新制上路 MFN稅率「不疊加」原則落地</h3>
+        <p>美國新一輪關稅措施上路，台灣出口美國適用不與最惠國待遇疊加原則：若產品現行最惠國（MFN）稅率低於10%，則兩項稅率合計仍以10%封頂；若MFN稅率已達10%或以上，則不再額外加徵。</p>
+        <div class="tags"><span class="tag">#關稅</span><span class="tag">#台灣</span><span class="tag">#出口</span></div>
+        <div class="card-detail" hidden>
+          <p>這項不疊加原則的落地，一定程度緩解了市場先前對台灣出口產業可能面臨關稅疊加、雙重課稅的疑慮，對電子、機械等出口導向產業的成本估算提供較明確的依據。</p>
+          <p>儘管如此，市場仍將持續關注後續是否有針對特定產業（如半導體）的額外條款，以及其他貿易夥伴同期關稅政策的相對變化，這些都可能影響台灣出口的相對競爭力。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.stock.yahoo.com/news/%E4%B8%8A%E5%B8%82%E6%AB%83%E4%BC%81%E6%A5%AD%E9%80%B2%E5%85%A5%E8%B2%A1%E5%A0%B1%E5%AF%86%E9%9B%86%E6%9C%9F">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>財報密集發佈 聯準會決策周來了</h3>
+        <p>上市櫃公司陸續進入法說會密集期，適逢美國科技巨頭財報周與聯準會利率決策同週登場，加上中油同步調整國內油價，多重變數在同一週交會，市場波動風險同步升溫。</p>
+        <div class="tags"><span class="tag">#法說會</span><span class="tag">#聯準會</span><span class="tag">#中油</span></div>
+        <div class="card-detail" hidden>
+          <p>對投資人而言，這種多重事件同週交會的情況，意味著單一消息面的衝擊可能被放大，建議提前規劃好資金部位，避免在重大消息集中公布的時段被迫追高殺低。</p>
+          <p>財經媒體普遍建議，投資人可將本週視為檢驗第三季展望的重要窗口——透過法說會內容交叉比對聯準會政策方向與國際油價走勢，較能掌握下一階段的資金配置邏輯。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.news.yahoo.com/%E6%B2%B9%E5%83%B9%E9%80%A3%E6%BC%B2%E5%A3%93%E5%8A%9B%E4%BE%86%E8%A5%B2">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>油價連漲壓力來襲</h3>
+        <p>中東局勢持續升溫推升國際油價，布蘭特原油兩週內已飆漲約27%，一度收在每桶96.78美元。受此影響，中油宣布自下週一起調整國內油價，汽油每公升調漲0.7元，柴油最高上看29.3元。</p>
+        <div class="tags"><span class="tag">#國際油價</span><span class="tag">#中油</span><span class="tag">#汽柴油</span></div>
+        <div class="card-detail" hidden>
+          <p>國際油價的急漲主要與中東地緣政治風險升溫有關，市場擔憂主要航運通道（如荷莫茲海峽、紅海）若受到衝擊，將進一步推升運輸與能源成本，形成新一輪輸入性通膨壓力。</p>
+          <p>對台灣而言，油價調漲不僅影響民生物價，也牽動航運、塑化、運輸等成本敏感產業的獲利表現，是觀察下半年通膨與企業毛利率變化的重要指標。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://tw.stock.yahoo.com/news/%E5%A0%B1%E5%BE%A9%E6%B2%99%E7%83%8F%E5%9C%B0%E6%94%BB%E6%93%8A%E8%8D%B7%E5%8F%B0%E9%81%94">
+        <div class="card-meta"><span class="src-pill src-yahoo">Yahoo Finance</span><span class="card-time mono">07/25</span></div>
+        <h3>葉門青年運動空襲沙烏地石油設施 地緣風險升溫</h3>
+        <p>葉門青年運動（胡塞組織）宣稱以飛彈攻擊沙烏地阿拉伯南部城市吉贊的石油設施，以報復先前遭受的攻擊行動，正式介入區域戰事並牽動全球油市神經。</p>
+        <div class="tags"><span class="tag">#中東地緣政治</span><span class="tag">#原油</span><span class="tag">#胡塞組織</span></div>
+        <div class="card-detail" hidden>
+          <p>這是近期中東地緣政治風險升溫的具體事件之一，攻擊目標鎖定能源基礎設施，直接牽動市場對區域原油供應穩定性的疑慮，也是布蘭特原油兩週內急漲近27%的重要背景之一。</p>
+          <p>分析師認為，若後續衝突進一步擴大或波及重要能源運輸航道，油價可能出現更劇烈的跳升，這將同步影響聯準會的通膨評估與利率決策路徑，是近期總經風險中最難預測的變數之一。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+      <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://news.futunn.com/post/76580916/">
+        <div class="card-meta"><span class="src-pill src-futu">富途牛牛</span><span class="card-time mono">本週</span></div>
+        <h3>下周「大波動」？市場嚴陣以待</h3>
+        <p>標普500約34%成分股將於下週公布財報，Meta、微軟週三，蘋果、亞馬遜週四接力登場，選擇權市場隱含波動率分別高達7.4%、6.6%與6.4%；聯邦基金期貨已將下週意外升息機率定價至30%至35%。</p>
+        <div class="tags"><span class="tag">#財報季</span><span class="tag">#聯準會</span><span class="tag">#VIX</span></div>
+        <div class="card-detail" hidden>
+          <p>資本支出爭議是本輪波動的核心：Alphabet上修資本支出至1,950至2,050億美元後股價重挫8%，特斯拉財報不如預期股價近期跌近20%，顯示市場對AI投資能否轉化為實際獲利的耐心正在下降。</p>
+          <p>芝加哥期權市場恐慌指數（VIX）已回升至今年稍早伊朗戰爭期間的高位，加上做市商呈現負Gamma狀態，技術面容易放大價格波動，這意味著下週任何超乎預期的消息都可能引發更劇烈的市場反應。</p>
+        </div>
+        <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+      </article>
+
+    </div>
+  </section>
+  </div>
+
+</main>
+
+<!-- ================= Preview Modal ================= -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="關閉預覽">✕</button>
+    <div class="modal-head">
+      <div class="card-meta"><span class="src-pill" id="modalSrc"></span><span class="card-time mono" id="modalTime"></span></div>
+      <h3 class="serif" id="modalTitle"></h3>
+      <div class="tags" id="modalTags"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <a class="btn-source" id="modalSourceLink" href="#" target="_blank" rel="noopener">查看原文 <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    // Tabs
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+    var panels = {
+      overview: document.getElementById('panel-overview'),
+      us: document.getElementById('panel-us'),
+      tw: document.getElementById('panel-tw'),
+      macro: document.getElementById('panel-macro')
+    };
+    tabs.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var target = btn.dataset.target;
+        tabs.forEach(function(b){ b.classList.toggle('active', b === btn); });
+        Object.keys(panels).forEach(function(key){
+          panels[key].classList.toggle('active', key === target);
+        });
+        window.scrollTo({top:0, behavior:(window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')});
+      });
+    });
+
+    // Modal preview
+    var overlay = document.getElementById('modalOverlay');
+    var modalSrc = document.getElementById('modalSrc');
+    var modalTime = document.getElementById('modalTime');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalTags = document.getElementById('modalTags');
+    var modalBody = document.getElementById('modalBody');
+    var modalSourceLink = document.getElementById('modalSourceLink');
+    var closeBtn = document.getElementById('modalClose');
+    var lastFocused = null;
+
+    function openModal(card){
+      var pill = card.querySelector('.src-pill');
+      modalSrc.textContent = pill.textContent;
+      modalSrc.className = 'src-pill ' + Array.prototype.slice.call(pill.classList).filter(function(c){return c!=='src-pill';}).join(' ');
+      modalTime.textContent = card.querySelector('.card-time').textContent;
+      modalTitle.textContent = card.querySelector('h3').textContent;
+      modalTags.innerHTML = card.querySelector('.tags').innerHTML;
+      modalBody.innerHTML = card.querySelector('.card-detail').innerHTML;
+      modalSourceLink.href = card.dataset.url;
+
+      lastFocused = document.activeElement;
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+      closeBtn.focus();
+    }
+    function closeModal(){
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden','true');
+      document.body.classList.remove('modal-open');
+      if(lastFocused) lastFocused.focus();
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll('.card')).forEach(function(card){
+      card.addEventListener('click', function(){ openModal(card); });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(card); }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+  })();
+</script>
