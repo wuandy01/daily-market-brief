@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度產業分析 — Andy大恆哥的每日財經摘要</title>
+<meta name="description" content="每週精選 5 位財經/產業分析 Substack 作者的深度好文，涵蓋半導體、AI基礎設施、投資紀律等主題。">
+<meta property="og:title" content="深度產業分析 — Andy大恆哥的每日財經摘要">
+<meta property="og:description" content="每週精選來自 Substack 的深度產業分析文章。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#eef1f0; --surface:#ffffff; --ink:#1b2430; --ink-soft:#56606f; --ink-faint:#8b95a1;
+    --accent:#a8791f; --accent-soft:#f4e9d3; --rule:#d8dcd7;
+    --src-sub:#9c3f5d; --src-sub-bg:#f6e6ec;
+    --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
+    --overlay: rgba(15,19,26,0.5);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#10141b; --surface:#171d27; --ink:#e7e9ec; --ink-soft:#9aa5b1; --ink-faint:#6b7684;
+      --accent:#dcae52; --accent-soft:#3a2f16; --rule:#2a3341;
+      --src-sub:#e58caf; --src-sub-bg:#3a2029;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
+      --overlay: rgba(0,0,0,0.65);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#10141b; --surface:#171d27; --ink:#e7e9ec; --ink-soft:#9aa5b1; --ink-faint:#6b7684;
+    --accent:#dcae52; --accent-soft:#3a2f16; --rule:#2a3341;
+    --src-sub:#e58caf; --src-sub-bg:#3a2029;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
+    --overlay: rgba(0,0,0,0.65);
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f0; --surface:#ffffff; --ink:#1b2430; --ink-soft:#56606f; --ink-faint:#8b95a1;
+    --accent:#a8791f; --accent-soft:#f4e9d3; --rule:#d8dcd7;
+    --src-sub:#9c3f5d; --src-sub-bg:#f6e6ec;
+    --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
+    --overlay: rgba(15,19,26,0.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  body.modal-open{overflow:hidden;}
+  .serif{font-family:"Iowan Old Style","Noto Serif TC","Songti TC","Source Han Serif TC",Georgia,"Times New Roman",serif;}
+  .mono{font-family:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;}
+  a{color:inherit;}
+
+  .masthead{max-width:960px;margin:0 auto;padding:2.6rem 1.5rem 1.4rem;}
+  .back-link{font-size:0.82rem;color:var(--ink-soft);text-decoration:none;display:inline-flex;gap:1rem;margin-bottom:0.9rem;}
+  .masthead-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem 1rem;}
+  .kicker{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+  .masthead h1{font-size:clamp(1.7rem,4.5vw,2.3rem);margin:0.25rem 0 0.35rem;font-weight:600;text-wrap:balance;letter-spacing:-0.01em;}
+  .masthead .date{font-size:0.85rem;color:var(--ink-soft);}
+  .masthead-rule{height:1px;background:linear-gradient(to right, var(--ink), transparent 85%);opacity:0.5;margin-top:1.1rem;}
+  .sources-line{margin-top:0.9rem;font-size:0.78rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:0.4rem 0.6rem;align-items:center;}
+  .overview-lede{font-size:0.9rem;color:var(--ink-soft);max-width:62ch;margin:0.9rem 0 0;}
+
+  main{max-width:960px;margin:0 auto;padding:1.8rem 1.5rem 3rem;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0.9rem;}
+  .card{
+    background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+    padding:1.15rem 1.2rem 1.1rem;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:0.6rem;color:inherit;cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .card-meta{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;}
+  .src-pill{font-size:0.68rem;font-weight:700;letter-spacing:0.03em;padding:0.22rem 0.55rem;border-radius:999px;white-space:nowrap;color:var(--src-sub);background:var(--src-sub-bg);}
+  .card-time{font-size:0.72rem;color:var(--ink-faint);}
+  .card h3{font-size:1.03rem;line-height:1.42;margin:0;font-weight:600;text-wrap:balance;}
+  .card p{margin:0;font-size:0.85rem;color:var(--ink-soft);line-height:1.7;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+  .tag{font-size:0.68rem;padding:0.16rem 0.5rem;border:1px solid var(--rule);border-radius:6px;color:var(--ink-soft);background:transparent;}
+  .card-link{margin-top:auto;padding-top:0.2rem;font-size:0.76rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:0.25rem;}
+  .card-link .arrow{transition:transform 0.15s ease;}
+  .card:hover .card-link .arrow{transform:translateX(3px);}
+
+  footer{max-width:960px;margin:0 auto;padding:1.6rem 1.5rem 3rem;font-size:0.76rem;color:var(--ink-faint);border-top:1px solid var(--rule);}
+
+  .modal-overlay{position:fixed;inset:0;background:var(--overlay);display:flex;align-items:flex-start;justify-content:center;padding:6vh 1.2rem;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.18s ease;}
+  .modal-overlay.open{opacity:1;pointer-events:auto;}
+  .modal{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:14px;max-width:640px;width:100%;max-height:86vh;overflow-y:auto;box-shadow:0 24px 64px -20px rgba(0,0,0,0.45);transform:translateY(10px);transition:transform 0.18s ease;}
+  .modal-overlay.open .modal{transform:translateY(0);}
+  .modal-close{position:absolute;top:1rem;right:1rem;width:2rem;height:2rem;border-radius:50%;border:1px solid var(--rule);background:var(--surface);color:var(--ink-soft);font-size:1rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s ease,color 0.15s ease;}
+  .modal-close:hover{background:var(--accent-soft);color:var(--ink);}
+  .modal-head{padding:1.4rem 3.2rem 1.1rem 1.5rem;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:0.7rem;}
+  .modal-head h3{margin:0;font-size:1.28rem;line-height:1.4;text-wrap:balance;}
+  .modal-body{padding:1.2rem 1.5rem 0.4rem;display:flex;flex-direction:column;gap:0.95rem;}
+  .modal-body p{margin:0;font-size:0.92rem;color:var(--ink-soft);line-height:1.85;}
+  .modal-foot{padding:1.2rem 1.5rem 1.5rem;display:flex;justify-content:flex-end;}
+  .btn-source{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;font-weight:700;color:var(--ink);background:var(--accent-soft);border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);padding:0.55rem 1rem;border-radius:8px;text-decoration:none;transition:transform 0.15s ease;}
+  .btn-source:hover{transform:translateY(-1px);}
+
+  @media (prefers-reduced-motion: reduce){.card, .card-link .arrow, .modal, .modal-overlay, .btn-source{transition:none;}}
+  @media (max-width:520px){
+    .modal-overlay{padding:0;align-items:stretch;}
+    .modal{max-width:none;max-height:none;height:100%;border-radius:0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a class="back-link" href="../index.html">← 回到每日摘要</a>
+  <div class="masthead-top">
+    <div>
+      <div class="kicker">深度產業分析 · Weekly Curated Deep Dives</div>
+      <h1 class="serif">產業與個股深度好文精選</h1>
+    </div>
+    <div class="date mono">每週更新</div>
+  </div>
+  <div class="masthead-rule"></div>
+  <div class="sources-line">
+    精選來源
+    <span class="src-pill">FOMO研究院電子報</span>
+    <span class="src-pill">Wing's Investment World</span>
+    <span class="src-pill">不預測漲跌</span>
+    <span class="src-pill">美股送分題</span>
+    <span class="src-pill">Sun Sun投資日記</span>
+  </div>
+  <p class="overview-lede">每週從這 5 位財經 / 產業分析作者的 Substack 電子報中，挑出當週最值得一讀的深度分析，摘要改寫後附上原文連結。內容多聚焦半導體、AI基礎設施與投資思維，適合搭配每日新聞一起服用。</p>
+</header>
+
+<main>
+  <div class="cards">
+
+    <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://www.fomosoc.com/p/cudaxgemini-kp52">
+      <div class="card-meta"><span class="src-pill">FOMO研究院電子報</span><span class="card-time mono">07/25</span></div>
+      <h3>CUDA護城河被削弱？輝達的開源策略與AMD的挑戰</h3>
+      <p>作者分析AMD新款Helios機型透過開放架構設計挑戰輝達的採購模式，並指出隨著程式碼開源與AI代理興起，繞開CUDA的替代成本正在下降，輝達的護城河可能從「不可取代」轉為「使用者偏好」。文中也解讀黃仁勳近期公開發文與推動開源模型背後的策略意涵。</p>
+      <div class="tags"><span class="tag">#輝達</span><span class="tag">#AMD</span><span class="tag">#CUDA</span><span class="tag">#AI晶片</span></div>
+      <div class="card-detail" hidden>
+        <p>文章特別點出，過去輝達的競爭優勢建立在CUDA生態系的高轉換成本上，但隨著AI代理（agent）能自動處理跨平台的程式碼轉譯工作，開發者被鎖定在單一生態系的必要性正在下降，這對長期評價輝達的護城河深度是一個值得留意的結構性變化。</p>
+        <p>作者同時認為，黃仁勳近期推動開源模型的動作，某種程度是為了在全球AI競賽中，讓美系技術棧維持影響力，而非單純的商業考量，兩者交織下這篇分析嘗試拆解「開源」與「護城河」看似矛盾卻可能並存的策略邏輯。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://winglpl.substack.com/p/be-orcl-ai-oracle-bloom-energy">
+      <div class="card-meta"><span class="src-pill">Wing's Investment World</span><span class="card-time mono">07/26</span></div>
+      <h3>AI最終瓶頸是電力：Oracle轉向燃料電池的背後</h3>
+      <p>作者剖析OpenAI「Stargate」計畫中Oracle的Project Jupiter資料中心，因新墨西哥州否決天然氣管道案而面臨供電困境，轉而採用Bloom Energy的固態氧化物燃料電池作為替代方案。文章評估此一轉變帶來的成本增加與建置時程延誤風險，點出電力取得能力正成為AI擴張的真正瓶頸。</p>
+      <div class="tags"><span class="tag">#Oracle</span><span class="tag">#BloomEnergy</span><span class="tag">#AI電力</span><span class="tag">#資料中心</span></div>
+      <div class="card-detail" hidden>
+        <p>作者指出，資料中心擴建速度長期以來被假設只受限於晶片供給，但這篇分析點出電網併網與地方政府核准流程，正逐漸成為比晶片本身更難預測的變數，一旦地方政策卡關，即便資金與晶片到位，專案時程仍可能大幅落後。</p>
+        <p>文章也延伸討論固態氧化物燃料電池相對傳統天然氣電廠的成本結構差異，認為這類替代能源方案雖能救急，但長期而言恐推高整體資料中心的單位算力成本，值得投資人在評估雲端與AI基建業者的資本支出效率時一併考量。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://gooptions.substack.com/p/rubin-nvl72-vs-gb200-ai-10">
+      <div class="card-meta"><span class="src-pill">不預測漲跌</span><span class="card-time mono">07/25</span></div>
+      <h3>Rubin對比GB300：一張折舊表看穿AI算力的隱藏減值</h3>
+      <p>作者引用SemiAnalysis報告，指出輝達新一代Rubin晶片相對GB300可達到每MW、每美元五倍效能，但這項優勢很大程度建立在樂觀的折舊年限假設上；一旦硬體實際汰換週期短於帳列年限，帳面獲利將掩蓋真實的資產減損風險。</p>
+      <div class="tags"><span class="tag">#輝達</span><span class="tag">#Rubin</span><span class="tag">#折舊</span><span class="tag">#雲端資本支出</span></div>
+      <div class="card-detail" hidden>
+        <p>文章的核心論點是「紙上壽命假設」與「技術實際壽命」之間的落差：雲端業者目前普遍以較長的年限提列AI伺服器折舊，讓帳面獲利看起來更漂亮，但若晶片世代更迭速度持續加快，實際汰換週期可能遠短於帳列假設。</p>
+        <p>作者認為，這是評估雲端資本支出報酬率時最容易被忽略的細節之一，一旦市場開始重新檢視折舊假設的合理性，目前帳面亮眼的AI資本支出效益，未來可能面臨向下修正的壓力。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://openbookandeasypoint.substack.com/p/24">
+      <div class="card-meta"><span class="src-pill">美股送分題</span><span class="card-time mono">07/26</span></div>
+      <h3>投資紀律：當一筆交易吐回你好不容易累積的獲利</h3>
+      <p>作者以自身交易經驗探討投資成熟的核心命題：策略是否「理論正確」不是重點，關鍵在於其等待時間、回撤幅度與心理壓力是否與自己的風險承受能力相符。文中提醒投資人重新檢視選用的策略，是否只是複製他人的成功公式，而非真正適合自己的方法。</p>
+      <div class="tags"><span class="tag">#投資紀律</span><span class="tag">#風險管理</span></div>
+      <div class="card-detail" hidden>
+        <p>作者強調，許多投資人在虧損後檢討的是「進出場時機」，卻很少檢視策略本身的等待時間與回撤幅度是否與自己的財務狀況、心理素質匹配，導致同一套邏輯上完全正確的策略，套用在不同人身上卻有截然不同的結果。</p>
+        <p>文章建議讀者建立一套屬於自己的「策略篩選標準」，把個人的資金規模、風險承受度與投資期限納入考量，而不是單純看別人回測績效亮眼就直接複製，這也是分析師系列文章一貫強調的「知己」先於「知彼」。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
+    <article class="card" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://sunsun168.substack.com/p/appleai">
+      <div class="card-meta"><span class="src-pill">Sun Sun投資日記</span><span class="card-time mono">07/25</span></div>
+      <h3>Apple是資本效率高，還是AI帳單還沒寄來？</h3>
+      <p>作者比較蘋果與其他科技巨頭的AI策略差異，認為蘋果將運算留在裝置端、把複雜任務外包雲端的作法，讓它避開了Google、Meta動輒千億美元的基礎設施支出。但文章也提出疑慮：這究竟是真正的資本效率，還是只是把算力成本延後顯現。</p>
+      <div class="tags"><span class="tag">#蘋果</span><span class="tag">#AI策略</span><span class="tag">#資本支出</span></div>
+      <div class="card-detail" hidden>
+        <p>作者指出，蘋果目前財報上看起來資本支出遠低於同業，市場也普遍給予「資本效率高」的正面評價，但這個判斷的前提是裝置端運算真的足以應付未來AI功能的複雜度。</p>
+        <p>文章提醒，如果蘋果未來被迫大幅提升雲端運算比重以支撐更強的AI功能，目前「省下來」的資本支出可能只是遞延，而非真正消失，投資人不宜單純以現階段的資本支出數字論斷蘋果的AI策略優劣。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  本頁精選自 FOMO研究院電子報、Wing's Investment World、不預測漲跌、美股送分題、Sun Sun投資日記 5 位作者的 Substack 公開文章，每週更新一次。摘要為改寫整理、非原文全文，僅供參考，不構成投資建議。點擊卡片可展開完整摘要，彈窗內按鈕可另開原文連結。
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="關閉預覽">✕</button>
+    <div class="modal-head">
+      <div class="card-meta"><span class="src-pill" id="modalSrc"></span><span class="card-time mono" id="modalTime"></span></div>
+      <h3 class="serif" id="modalTitle"></h3>
+      <div class="tags" id="modalTags"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <a class="btn-source" id="modalSourceLink" href="#" target="_blank" rel="noopener">查看原文 <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('modalOverlay');
+    var modalSrc = document.getElementById('modalSrc');
+    var modalTime = document.getElementById('modalTime');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalTags = document.getElementById('modalTags');
+    var modalBody = document.getElementById('modalBody');
+    var modalSourceLink = document.getElementById('modalSourceLink');
+    var closeBtn = document.getElementById('modalClose');
+    var lastFocused = null;
+
+    function openModal(card){
+      modalSrc.textContent = card.querySelector('.src-pill').textContent;
+      modalTime.textContent = card.querySelector('.card-time').textContent;
+      modalTitle.textContent = card.querySelector('h3').textContent;
+      modalTags.innerHTML = card.querySelector('.tags').innerHTML;
+      modalBody.innerHTML = card.querySelector('.card-detail').innerHTML;
+      modalSourceLink.href = card.dataset.url;
+      lastFocused = document.activeElement;
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+      closeBtn.focus();
+    }
+    function closeModal(){
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden','true');
+      document.body.classList.remove('modal-open');
+      if(lastFocused) lastFocused.focus();
+    }
+    Array.prototype.slice.call(document.querySelectorAll('.card')).forEach(function(card){
+      card.addEventListener('click', function(){ openModal(card); });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openModal(card); }
+      });
+    });
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+  })();
+</script>
+</body>
+</html>
