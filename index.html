@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Andy大恆哥的每日財經摘要 — 2026.07.30</title>
+<title>每日財經摘要 — 2026.07.30</title>
 <meta name="description" content="每日彙整美股、台股、總體經濟新聞，資料來源為經濟日報、Yahoo Finance、富途牛牛，並附上每週市場週報典藏。">
-<meta property="og:title" content="Andy大恆哥的每日財經摘要 — 2026.07.30">
+<meta property="og:title" content="每日財經摘要 — 2026.07.30">
 <meta property="og:description" content="每日彙整美股、台股、總體經濟新聞與市場分析，每週附上歷史週報。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wuandy01.github.io/daily-market-brief/">
@@ -32,6 +32,7 @@
     --src-futu-bg:#e1f3ec;
     --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
     --overlay: rgba(15,19,26,0.5);
+    --feature-bg:#16305a; --feature-ink:#eef3fa; --feature-ink-soft:#b7c9de; --feature-tag-border:rgba(255,255,255,0.28);
   }
   @media (prefers-color-scheme: dark){
     :root{
@@ -42,6 +43,7 @@
       --src-futu:#5fd6ab; --src-futu-bg:#123328;
       --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
       --overlay: rgba(0,0,0,0.65);
+      --feature-bg:#1c3a5e; --feature-ink:#eef3fa; --feature-ink-soft:#b7c9de; --feature-tag-border:rgba(255,255,255,0.24);
     }
   }
   :root[data-theme="dark"]{
@@ -52,6 +54,7 @@
     --src-futu:#5fd6ab; --src-futu-bg:#123328;
     --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 20px -10px rgba(0,0,0,0.5);
     --overlay: rgba(0,0,0,0.65);
+    --feature-bg:#1c3a5e; --feature-ink:#eef3fa; --feature-ink-soft:#b7c9de; --feature-tag-border:rgba(255,255,255,0.24);
   }
   :root[data-theme="light"]{
     --bg:#eef1f0; --surface:#ffffff; --ink:#1b2430; --ink-soft:#56606f; --ink-faint:#8b95a1;
@@ -61,6 +64,7 @@
     --src-futu:#0f8f6c; --src-futu-bg:#e1f3ec;
     --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 6px 16px -8px rgba(27,36,48,0.10);
     --overlay: rgba(15,19,26,0.5);
+    --feature-bg:#16305a; --feature-ink:#eef3fa; --feature-ink-soft:#b7c9de; --feature-tag-border:rgba(255,255,255,0.28);
   }
 
   *{box-sizing:border-box;}
@@ -123,6 +127,14 @@
   .card-link{margin-top:auto;padding-top:0.2rem;font-size:0.76rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:0.25rem;}
   .card-link .arrow{transition:transform 0.15s ease;}
   .card:hover .card-link .arrow{transform:translateX(3px);}
+  .card.feature{background:var(--feature-bg);border:none;color:var(--feature-ink);padding:1.7rem 1.9rem 1.5rem;margin-bottom:2rem;}
+  .card.feature h3{font-size:1.3rem;line-height:1.42;color:var(--feature-ink);}
+  .card.feature p{font-size:0.9rem;color:var(--feature-ink-soft);}
+  .card.feature .card-time{color:var(--feature-ink-soft);}
+  .card.feature .src-pill{background:rgba(255,255,255,0.14);color:var(--feature-ink);}
+  .card.feature .tag{color:var(--feature-ink-soft);border-color:var(--feature-tag-border);}
+  .card.feature .card-link{color:var(--accent);}
+  .card.feature:hover{border-color:transparent;}
 
   /* ---------- Overview panel ---------- */
   .overview-lede{font-size:0.92rem;color:var(--ink-soft);max-width:62ch;margin:0 0 1.8rem;}
@@ -203,7 +215,7 @@
 <header class="masthead">
   <div class="masthead-top">
     <div>
-      <div class="kicker">Andy大恆哥的每日財經摘要 · Daily Market Brief</div>
+      <div class="kicker">每日財經摘要 · Daily Market Brief</div>
       <h1 class="serif">美股・台股・總體消息</h1>
     </div>
     <div class="date mono">2026&nbsp;/&nbsp;07&nbsp;/&nbsp;30（四）</div>
@@ -232,6 +244,20 @@
 
   <!-- ================= 總覽 ================= -->
   <div class="panel active" id="panel-overview">
+    <div class="cat-head"><h2 class="serif">今日焦點</h2><span class="cat-note">Top Story</span><div class="cat-head-rule"></div></div>
+
+    <article class="card feature" tabindex="0" role="button" aria-haspopup="dialog" data-url="https://money.udn.com/money/story/123398/9659575">
+      <div class="card-meta"><span class="src-pill src-udn">經濟日報</span><span class="card-time mono">07/30</span></div>
+      <h3 class="serif">Fed利率連兩會凍在3.5%-3.75% 三官員罕見倒戈主張升息</h3>
+      <p>聯準會決議維持利率區間3.5%-3.75%不變，但達拉斯、克里夫蘭、明尼阿波里斯三位分行總裁投票主張應升息1碼，為近十年來最大分歧，市場質疑新任主席華許的抗通膨決心，道瓊當日重挫逾1,100點。</p>
+      <div class="tags"><span class="tag">#聯準會</span><span class="tag">#FOMC</span><span class="tag">#華許</span><span class="tag">#美股</span></div>
+      <div class="card-detail" hidden>
+        <p>三位官員同時主張升息、且動用罕見的公開異議，反映聯準會內部對通膨韌性的看法已出現明顯裂痕；這也是市場首次正式檢視華許接掌主席後的決策風格與溝通方式。</p>
+        <p>會後長天期公債殖利率急升、費城半導體指數同步重挫逾5%，顯示投資人正重新定價「鷹派分歧」可能延長高利率環境的風險，而非單純解讀為政策明朗化的利多。</p>
+      </div>
+      <span class="card-link">看完整摘要 <span class="arrow">→</span></span>
+    </article>
+
     <div class="cat-head"><h2 class="serif">今日大事記</h2><span class="cat-note">Key Events</span><div class="cat-head-rule"></div></div>
     <ul class="digest-list">
       <li><span class="tag-label">Fed鷹派分歧</span><p>聯準會決議<b>維持利率3.5%-3.75%不變，但3位官員罕見倒戈主張升息</b>，為近十年來最大分歧，主席華許的抗通膨決心遭市場質疑，道瓊重挫逾1,100點。</p></li>
