@@ -1,15 +1,15 @@
-# Andy大恆哥的每日財經摘要
+# Daily Market Brief
 
-每日彙整美股、台股、總體經濟新聞的靜態網頁，資料來源為經濟日報、Yahoo Finance、富途牛牛。透過 Claude Code 排程每天自動更新內容並部署到 GitHub Pages。
+A static site aggregating daily US equity, Taiwan equity, and macroeconomic news, sourced from Economic Daily News (經濟日報), Yahoo Finance, and Futu. Content is regenerated each day by a scheduled Claude Code task and deployed to GitHub Pages.
 
-- 內容分三個分類：美股 / 台股 / 總體消息，另有「總覽」頁整理當日大事記與市場分析
-- 點擊卡片可在站內展開完整摘要，彈窗內按鈕可另開原文連結
-- 純靜態 HTML/CSS/JS，無需建置流程，`index.html` 即是完整頁面
+- Three categories — **US equities**, **Taiwan equities**, and **Macro** — plus an **Overview** page collecting the day's key events and market commentary
+- Clicking a card expands the full summary in place; a button inside the modal opens the original article
+- Plain static HTML/CSS/JS with no build pipeline — `index.html` is the complete page
 
-## 部署
+## Deployment
 
-本專案使用 GitHub Pages 直接從 `main` 分支根目錄發布，不需要任何建置步驟。
+Published via GitHub Pages directly from the root of the `main` branch. No build step required.
 
-## 免責聲明
+## Disclaimer
 
-頁面內容為新聞彙整與市場氛圍歸納，不構成個別化投資建議。
+Content is a summary of published news and a general characterization of market sentiment. It does not constitute personalized investment advice.
